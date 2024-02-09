@@ -1,0 +1,45 @@
+/* Sprite */
+
+ul {
+    display: flex;
+    gap: 3rem;
+}
+
+ul li {
+    list-style: none;
+    font-size: 50px;
+    font-weight: bolder;
+    width: 350px;
+    height: 500px;
+    text-align: center;
+    background-color: RGB(247, 247, 247);
+    border: 3px solid RGB(153, 153, 153);
+    border-radius: 15px;
+    padding-top: 25px;
+}
+
+/* Add img to sprite */
+.icon {
+    display: block;
+    margin: auto;
+    width: 280px;
+    height: 375px;
+    background-image: url("./images/fun-with-css.png");
+    background-repeat: no-repeat;
+    padding-top: 50px;
+}
+
+/* Place HTML img */
+.i-html {
+    background-position: 0px;
+}
+
+/* Place CSS img */
+.i-css {
+    background-position: -286px;
+}
+
+/* Place Javascript img */
+.i-js {
+    background-position: -582px;
+}
