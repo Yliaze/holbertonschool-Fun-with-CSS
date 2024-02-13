@@ -1,0 +1,86 @@
+/* Toggle */
+
+/* Hide checkbox */
+.toggle-cb {
+    display: none;
+}
+
+.toggle {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 100px;
+}
+
+/* Inside toggle label */
+.toggle-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* So we can position circle corectly */
+    width: 200px;
+    height: 100px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+/* Add text to the label */
+.toggle-label::before {
+    position: absolute;
+    font-family: Arial, Helvetica, sans-serif;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-weight: 600;
+    font-size: 40px;
+}
+
+/* Add text "Yes" if checked */
+.toggle-cb:checked ~ .toggle-label::before {
+    content: "Yes";
+    top: 50%;
+    left: 37%;
+    color: white;
+}
+
+/* Add text "No" if NOT checked */
+.toggle-cb:not(:checked) ~ .toggle-label::before {
+    content: "No";
+    top: 50%;
+    left: 63%;
+    color: RGB(196, 196, 196);
+}
+
+/* Toggle inner */
+.toggle-inner {
+    display: block;
+    width: 90%;
+    height: 55%;
+    background: RGB(235, 235, 235);
+    border-radius: 25rem;
+    transition: background 0.4s;
+    border: 3px solid RGB(196, 196, 196);
+}
+
+/* Toggle inner color change */
+.toggle-cb:checked ~ .toggle-label .toggle-inner {
+    background: RGB(225, 1, 60);
+}
+
+/* Toggle Swith */
+.toggle-switch::after {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 5px;
+    height: 80px;
+    width: 80px;
+    background: white;
+    border-radius: 25rem;
+    border: 3px solid RGB(196, 196, 196);
+    transition: transform 0.2s;
+}
+
+/* Toggle Swith Transition */
+.toggle-cb:checked ~ .toggle-label .toggle-switch::after {
+    transform: translateX(130px);
+}
