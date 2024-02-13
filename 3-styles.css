@@ -1,0 +1,118 @@
+/* General */
+
+body {
+    margin: 40px;
+}
+
+/* Menu */
+
+.menu-open {
+    display: none;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Red Circle */
+
+.menu-open-button {
+	display: block;
+    cursor: pointer;
+    background-color: #C51A37;
+    border: 2px solid #C51A37;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    transition: transform 300ms ease-in-out;
+    z-index: 1;
+}
+
+.menu-open:not(:checked)+.menu-open-button:hover {
+	transform: scale(1.2);
+}
+
+/* Cross */
+
+.menu-open-button span {
+    position: relative;
+    display: block;
+    top: 17px;
+    left: 15px;
+    width: 20px;
+    height: 2px;
+    background-color: white;
+    margin: 5px;
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Cross Animation */
+
+.menu-open-button span:nth-child(2) {
+    transition: opacity 0.2s ease-in-out, width 0.2s ease-in-out;
+}
+
+#menu-open:checked + .menu-open-button span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+#menu-open:checked + .menu-open-button span:nth-child(2) {
+    opacity: 0;
+    width: 0;
+}
+
+#menu-open:checked + .menu-open-button span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Menu Items */
+
+.menu-item {
+    display: block;
+    background-color: #C51A37;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    border: 2px solid #C51A37;
+    margin-left: 2.5px;
+    text-decoration: none;
+    transition: transform 0.3s ease-in-out;
+    color: white;    
+}
+
+.menu-item:hover {
+    background-color: white;
+    color: #C51A37;
+}
+
+/* Translate all items on Y axes */
+
+.menu-open:not(:checked) ~ .menu-item:nth-child(3) {
+	transform: translateY(-75px);
+}
+
+.menu-open:not(:checked) ~ .menu-item:nth-child(4) {
+	transform: translateY(-152px);
+}
+
+.menu-open:not(:checked) ~ .menu-item:nth-child(5) {
+	transform: translateY(-225px);
+}
+
+.menu-open:not(:checked) ~ .menu-item:nth-child(6) {
+	transform: translateY(-300px);
+}
+
+.menu-open:not(:checked) ~ .menu-item:nth-child(7) {
+	transform: translateY(-375px);
+}
+
+/* Items */
+
+.menu-item .fa {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
